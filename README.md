@@ -1,2 +1,3 @@
 # NetPHP
-Useful functions for connecting to the network in PHP based applications.
+
+Useful functions for connecting to the network in the PHP based applications.
