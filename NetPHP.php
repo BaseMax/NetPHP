@@ -32,13 +32,6 @@ function useragent() {
 	return "Mozilla/5.0 (Windows NT 6.1; r…) Gecko/20100101 Firefox/60.0";
 	return "Mozilla/5.0(Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36(KHTML,like Gecko) curlrome/68.0.3440.106 Mobile Safari/537.36";
 }
-function store_token($response) {
-	preg_match_all("/name=\"\_token\" value=\"(?<token>[^\"]+)\"/i",$response,$tokens);
-	if(!isset($tokens["token"][0])) {
-		exit("No Token value in login page!\n");
-	}
-	return $tokens["token"][0];
-}
 function get_headers_from_curl_response($headerContent) {
 	$headers = array();
 	$arrRequests = explode("\r\n\r\n",$headerContent);
@@ -156,6 +149,13 @@ function get($url,$headers=[],$reffer="",$auto_redirect=true)
 function random() {
 	// like Math.random() in JS
 	return(float)rand()/(float)getrandmax();
+}
+function store_token($response) {
+	preg_match_all("/name=\"\_token\" value=\"(?<token>[^\"]+)\"/i",$response,$tokens);
+	if(!isset($tokens["token"][0])) {
+		exit("No Token value in login page!\n");
+	}
+	return $tokens["token"][0];
 }
 function get_parse($content,$name) {
 	//name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value=""
