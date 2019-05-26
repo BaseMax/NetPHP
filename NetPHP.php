@@ -13,21 +13,6 @@ $debug=false;
 // $debug=true;
 $debug_details=true;
 $debug_details=false;
-$token=null;
-function starts($haystack,$needle) {
-	$length = strlen($needle);
-	return(substr($haystack,0,$length) === $needle);
-}
-function ends($haystack,$needle) {
-	$length = strlen($needle);
-	if($length == 0) {
-		return true;
-	}
-	return(substr($haystack,-$length) === $needle);
-}
-function contains($string,$contain) {
-	return strpos($string,$contain) !== false;
-}
 function useragent() {
 	return "Mozilla/5.0 (Windows NT 6.1; r…) Gecko/20100101 Firefox/60.0";
 	return "Mozilla/5.0(Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36(KHTML,like Gecko) curlrome/68.0.3440.106 Mobile Safari/537.36";
