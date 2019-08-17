@@ -2,9 +2,9 @@
 /**
 *
 * @Name : NetPHP.php
-* @Version : 1.0
+* @Version : 1.1
 * @Programmer : Max
-* @Date : 2019-05-26
+* @Date : 2019-05-26, 2019-08-17
 * @Released under : https://github.com/BaseMax/NetPHP/blob/master/LICENSE
 * @Repository : https://github.com/BaseMax/NetPHP
 *
