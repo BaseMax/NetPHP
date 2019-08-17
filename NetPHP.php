@@ -131,6 +131,7 @@ function get($url,$headers=[],$reffer="",$auto_redirect=true)
 	return [$body,$header];
 }
 ////////////////////////////////////////////////////////
+/*
 function random() {
 	// like Math.random() in JS
 	return(float)rand()/(float)getrandmax();
@@ -151,3 +152,4 @@ function get_parse($content,$name) {
 	$value=str_replace("_","/",$value);
 	return $value;
 }
+*/
