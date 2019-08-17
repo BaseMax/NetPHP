@@ -81,6 +81,10 @@ function post($url,$values,$headers=[],$reffer="",$auto_redirect=true) {
 		print_r($body);
 		print "\n";
 	}
+	$httpCode = curl_getinfo($curl,CURLINFO_HTTP_CODE);
+	if($httpCode == 404) {
+		return false;
+	}
 	return [$body,$header];
 }
 function get($url,$headers=[],$reffer="",$auto_redirect=true)
@@ -127,6 +131,10 @@ function get($url,$headers=[],$reffer="",$auto_redirect=true)
 		print "----------@Response Body\n";
 		print_r($body);
 		print "\n";
+	}
+	$httpCode = curl_getinfo($curl,CURLINFO_HTTP_CODE);
+	if($httpCode == 404) {
+		return false;
 	}
 	return [$body,$header];
 }
