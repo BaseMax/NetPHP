@@ -73,6 +73,7 @@ function post($url,$values,$headers=[],$reffer="",$auto_redirect=true) {
 	$header_size = curl_getinfo($curl,CURLINFO_HEADER_SIZE);
 	$header = substr($response,0,$header_size);
 	$body = substr($response,$header_size);
+	$httpCode = curl_getinfo($curl,CURLINFO_HTTP_CODE);
 	curl_close($curl);
 	if($debug && $debug_details) {
 		print "----------@Response Headers\n";
@@ -81,7 +82,6 @@ function post($url,$values,$headers=[],$reffer="",$auto_redirect=true) {
 		print_r($body);
 		print "\n";
 	}
-	$httpCode = curl_getinfo($curl,CURLINFO_HTTP_CODE);
 	if($httpCode == 404) {
 		return false;
 	}
@@ -124,6 +124,7 @@ function get($url,$headers=[],$reffer="",$auto_redirect=true)
 	$header_size = curl_getinfo($curl,CURLINFO_HEADER_SIZE);
 	$header = substr($response,0,$header_size);
 	$body = substr($response,$header_size);
+	$httpCode = curl_getinfo($curl,CURLINFO_HTTP_CODE);
 	curl_close($curl);
 	if($debug && $debug_details) {
 		print "----------@Response Headers\n";
@@ -132,7 +133,6 @@ function get($url,$headers=[],$reffer="",$auto_redirect=true)
 		print_r($body);
 		print "\n";
 	}
-	$httpCode = curl_getinfo($curl,CURLINFO_HTTP_CODE);
 	if($httpCode == 404) {
 		return false;
 	}
