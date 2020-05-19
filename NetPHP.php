@@ -32,7 +32,7 @@ function get_headers_from_curl_response($headerContent) {
 	}
 	return $headers;
 }
-function post($url,$values,$headers=[],$reffer="",$auto_redirect=true) {
+function post($url,$values=[],$headers=[],$reffer="",$auto_redirect=true) {
 	global $debug,$debug_details;
 	if($debug) {
 		print "@Request[POST]----------------------------------------------\n";
